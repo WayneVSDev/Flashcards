@@ -68,6 +68,30 @@
     </style>
 </head>
 <body>
+    <audio id="backgroundMusic" volume="0.5">
+        <source src="T1.mp3" type="audio/mpeg">
+    </audio>
+    <button class="play-button" onclick="toggleMusic()">Play/Stop Music</button><br><br>
+    <script>
+        let isMusicPlaying = false; // Flag to track music state
+    
+        function toggleMusic() {
+            const music = document.getElementById('backgroundMusic');
+            isMusicPlaying = !isMusicPlaying; // Toggle play/stop state
+
+            if (isMusicPlaying) {
+            music.play();
+            music.volume = 0.1;  // Set volume to 0.5 (half volume)
+            // Update button text to reflect play state
+            document.querySelector('.play-button').textContent = 'Stop Music';
+            } else {
+            music.pause();
+            // Update button text to reflect play state
+            document.querySelector('.play-button').textContent = 'Play Music';
+            }
+        }
+    </script>
+
     <button class="toggle-button" onclick="toggleSequence()">Show Chinese First</button>
     <div class="card-container">
         <div class="card" onclick="reveal(this)">
