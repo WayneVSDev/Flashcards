@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Vocabulary Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .toggle-button {
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .card-container {
+            display: grid;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .hidden {
+            display: none;
+        }
+
+        @media (min-width: 1200px) {
+            .card-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        @media (min-width: 900px) and (max-width: 1199px) {
+            .card-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (min-width: 600px) and (max-width: 899px) {
+            .card-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 599px) {
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-button" onclick="toggleSequence()">Show Chinese First</button>
+    <div class="card-container">
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Guzheng — a Chinese Zither</div>
+            <div class="chinese hidden">古筝</div>
+            <div class="pinyin hidden">Gǔzhēng</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Erhu — the Chinese Violin</div>
+            <div class="chinese hidden">二胡</div>
+            <div class="pinyin hidden">Èrhú</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Dizi — a Chinese Transverse Flute</div>
+            <div class="chinese hidden">笛子</div>
+            <div class="pinyin hidden">Dízi</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Pipa — the Chinese Lute or Chinese Guitar</div>
+            <div class="chinese hidden">琵琶</div>
+            <div class="pinyin hidden">Pípá</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Guqin — Chinese Seven-String Instrument</div>
+            <div class="chinese hidden">古琴</div>
+            <div class="pinyin hidden">Gǔqín</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Suona — the Chinese Trumpet</div>
+            <div class="chinese hidden">唢呐</div>
+            <div class="pinyin hidden">Suǒnà</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Xiao — a Chinese Vertical End-Blown Flute</div>
+            <div class="chinese hidden">箫</div>
+            <div class="pinyin hidden">Xiāo</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Beijing Opera/Peking Opera</div>
+            <div class="chinese hidden">京剧</div>
+            <div class="pinyin hidden">Jīngjù</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Male role</div>
+            <div class="chinese hidden">生</div>
+            <div class="pinyin hidden">shēng</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Old male role</div>
+            <div class="chinese hidden">老生</div>
+            <div class="pinyin hidden">lǎoshēng</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Young male role</div>
+            <div class="chinese hidden">小生</div>
+            <div class="pinyin hidden">xiǎoshēng</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Martial male role</div>
+            <div class="chinese hidden">武生</div>
+            <div class="pinyin hidden">wǔshēng</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Female role</div>
+            <div class="chinese hidden">旦</div>
+            <div class="pinyin hidden">dàn</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Old female role</div>
+            <div class="chinese hidden">老旦</div>
+            <div class="pinyin hidden">lǎodàn</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Middle age female role</div>
+            <div class="chinese hidden">青衣</div>
+            <div class="pinyin hidden">qīngyī</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Young female role</div>
+            <div class="chinese hidden">花旦</div>
+            <div class="pinyin hidden">huādàn</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Martial female role</div>
+            <div class="chinese hidden">武旦</div>
+            <div class="pinyin hidden">wǔdàn</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Painted-face character</div>
+            <div class="chinese hidden">净</div>
+            <div class="pinyin hidden">jìng</div>
+        </div>
+        <div class="card" onclick="reveal(this)">
+            <div class="english">Clown role</div>
+            <div class="chinese hidden">丑</div>
+            <div class="pinyin hidden">chǒu</div>
+        </div>
+    </div>
+    <script>
+        let showChineseFirst = false;
+
+        function toggleSequence() {
+            showChineseFirst = !showChineseFirst;
+            document.querySelectorAll('.card').forEach(card => {
+                card.classList.remove('revealed');
+                if (showChineseFirst) {
+                    card.querySelector('.english').classList.add('hidden');
+                    card.querySelector('.chinese').classList.remove('hidden');
+                    card.querySelector('.pinyin').classList.remove('hidden');
+                } else {
+                    card.querySelector('.english').classList.remove('hidden');
+                    card.querySelector('.chinese').classList.add('hidden');
+                    card.querySelector('.pinyin').classList.add('hidden');
+                }
+            });
+            document.querySelector('.toggle-button').textContent = showChineseFirst ? 'Show English First' : 'Show Chinese First';
+        }
+
+        function reveal(card) {
+            if (!card.classList.contains('revealed')) {
+                card.classList.add('revealed');
+                if (showChineseFirst) {
+                    card.querySelector('.english').classList.remove('hidden');
+                    const englishText = card.querySelector('.english').textContent;
+                    const textToSpeak = englishText.includes('—') ? englishText.split('—')[1].trim() : englishText;
+                    speakText(textToSpeak, 'en-US');
+                } else {
+                    card.querySelector('.chinese').classList.remove('hidden');
+                    card.querySelector('.pinyin').classList.remove('hidden');
+                    speakText(card.querySelector('.chinese').textContent, 'zh-CN');
+                }
+            }
+        }
+
+        function speakText(text, lang) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = lang;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
